@@ -1,0 +1,27 @@
+﻿#--------------------------------------------
+# Comando para Administrador de paquetes NuGet
+#--------------------------------------------
+
+# Borrar la base de datos
+dotnet ef database drop --force
+
+# Borrar las migraciones
+dotnet ef migrations remove 
+
+# Crear una nueva migración - InitialCreate es el nombre de la migración
+dotnet ef migrations add InitialCreate
+
+# Actualizar la base de datos con la migración creada
+dotnet ef database update
+
+#--------------------------------------------
+# Paquetes instalados -- Misma version del proyecto
+#--------------------------------------------
+
+# Paquete para Entity Framework Core - Microsoft.EntityFrameworkCore
+# Paquete para Entity Framework Core SQL Server - Microsoft.EntityFrameworkCore.SqlServer
+# Paquete para Entity Framework Core Tools - Microsoft.EntityFrameworkCore.Tools
+# Paquete para Entity Framework Core Design - Microsoft.EntityFrameworkCore.Design
+# Paquete DotNet - DotNetEnv
+# Paquete Konscious Argon2 - Konscious.Security.Cryptography.Argon2
+# Paquete Swagger - Swashbuckle.AspNetCore
