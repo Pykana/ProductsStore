@@ -1,5 +1,8 @@
 using BACKEND_STORE.Config;
+using BACKEND_STORE.Interfaces;
 using BACKEND_STORE.Models.DB;
+using BACKEND_STORE.Repositories;
+using BACKEND_STORE.Services;
 using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
@@ -69,6 +72,13 @@ builder.Services.AddResponseCompression(options =>
 {
     options.EnableForHttps = true;
 });
+
+// Registro correcto de repositorio e interfaz
+builder.Services.AddScoped<ITestRepository, TestRepository>();
+
+// Registro correcto del servicio e interfaz
+builder.Services.AddScoped<ITestService, TestService>();
+
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

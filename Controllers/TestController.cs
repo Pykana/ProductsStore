@@ -1,4 +1,5 @@
-﻿using BACKEND_STORE.Models.DB;
+﻿using BACKEND_STORE.Interfaces;
+using BACKEND_STORE.Models.DB;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BACKEND_STORE.Controllers
@@ -7,28 +8,30 @@ namespace BACKEND_STORE.Controllers
     [ApiController]
     public class TestController : ControllerBase
     {
-        private readonly AppDbContext _context;
-
-        public TestController(AppDbContext context)
+        private ITestService _TestService;
+        public TestController( ITestService TestService)
         {
-            _context = context;
+            _TestService = TestService;
         }
 
         [HttpGet("conexion")]
         public async Task<IActionResult> ProbarConexion()
         {
-            try
-            {
-                var puedeConectar = await _context.Database.CanConnectAsync();
+            try { 
+                Test resultado = await _TestService.ProbarConexion();
 
-                if (puedeConectar)
-                    return Ok("Conexión exitosa con la base de datos.");
+                if (resultado.Value == 1)
+                {
+                    return Ok(new { message = resultado.Message });
+                }
                 else
-                    return StatusCode(500, "No se pudo conectar a la base de datos.");
+                {
+                    return StatusCode(500, new { message = resultado.Message });
+                }
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Error de conexión: {ex.Message}");
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
         }
     }
