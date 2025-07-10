@@ -20,13 +20,13 @@ namespace BACKEND_STORE.Controllers
             try { 
                 Test resultado = await _TestService.ProbarConexion();
 
-                if (resultado.Value == 1)
-                {
-                    return Ok(new { message = resultado.Message });
-                }
-                else
-                {
-                    return StatusCode(500, new { message = resultado.Message });
+                switch (resultado.Value) {
+                    case 0:
+                        return BadRequest(resultado);
+                    case 1:
+                        return Ok(resultado);
+                    default:
+                        return StatusCode(500, resultado);
                 }
             }
             catch (Exception ex)
