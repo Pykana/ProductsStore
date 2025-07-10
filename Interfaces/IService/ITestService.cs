@@ -1,6 +1,6 @@
-﻿using BACKEND_STORE.Models.DB;
+﻿using BACKEND_STORE.Models.GET;
 
-namespace BACKEND_STORE.Interfaces
+namespace BACKEND_STORE.Interfaces.IService
 {
     public interface ITestService
     {

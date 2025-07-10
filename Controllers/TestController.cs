@@ -1,5 +1,5 @@
-﻿using BACKEND_STORE.Interfaces;
-using BACKEND_STORE.Models.DB;
+﻿using BACKEND_STORE.Interfaces.IService;
+using BACKEND_STORE.Models.GET;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BACKEND_STORE.Controllers

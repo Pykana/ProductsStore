@@ -1,5 +1,6 @@
-﻿using BACKEND_STORE.Interfaces;
+﻿using BACKEND_STORE.Interfaces.IRepository;
 using BACKEND_STORE.Models.DB;
+using BACKEND_STORE.Models.GET;
 
 namespace BACKEND_STORE.Repositories
 {
