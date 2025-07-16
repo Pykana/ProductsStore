@@ -19,6 +19,6 @@
         public string created_by { get; set; } // Usuario que creó el cliente
         public string updated_by { get; set; } // Usuario que actualizó el cliente
         public string deleted_by { get; set; } // Usuario que eliminó el cliente
-        public ICollection<Customer_User> CustomerUsers { get; set; } = new List<Customer_User>() // Relación
+        public ICollection<Customer_User> CustomerUsers { get; set; } = new List<Customer_User>(); // Relación
     }
 }

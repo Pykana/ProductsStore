@@ -4,7 +4,7 @@ namespace BACKEND_STORE.Models.GET
 {
     public class Login
     {
-        public class login
+        public class loginGET
         {
             [Required(ErrorMessage = "El campo Nombre de Usuario es obligatorio")]
             public string username { get; set; }
@@ -12,7 +12,7 @@ namespace BACKEND_STORE.Models.GET
             public string password { get; set; }
         }
 
-        public class restore
+        public class restoreGET
         {
             [Required(ErrorMessage = "El campo Email es obligatorio")]
             [EmailAddress(ErrorMessage = "El formato del email es incorrecto")]

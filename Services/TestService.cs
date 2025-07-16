@@ -18,6 +18,22 @@ namespace BACKEND_STORE.Services
         {
             return await _testRepository.ProbarConexion();
         }
+
+        public async Task<StoreConfig> VerVaribalesDeEntorno()
+        {
+            return await _testRepository.VerVaribalesDeEntorno();
+        }
+        public async Task<string> VerificarEncriptamiento(string contraseña)
+        {
+            return await _testRepository.VerificarEncriptamiento(contraseña);
+        }
+
+        public async Task<string> VerificarLogs(string Mensaje)
+        {
+            return await _testRepository.VerificarLogs(Mensaje);
+        }
+      
+
     }
 }
 

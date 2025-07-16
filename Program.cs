@@ -4,6 +4,7 @@ using BACKEND_STORE.Interfaces.IService;
 using BACKEND_STORE.Models.DB;
 using BACKEND_STORE.Repositories;
 using BACKEND_STORE.Services;
+using BACKEND_STORE.Shared;
 using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
@@ -57,6 +58,7 @@ if (swaggerFlag) {
 // Inyeccion de logs y configuracion de timezone
 builder.Services.AddSingleton<Logs>();
 builder.Services.AddSingleton<TimeZoneService>();
+builder.Services.AddSingleton<Encryption>();
 
 builder.Services.AddCors(options =>
 {
@@ -96,12 +98,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 var app = builder.Build();
 
-// Creacion de la base de datos si no existe
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate();
-}
+//// Creacion de la base de datos si no existe
+//using (var scope = app.Services.CreateScope())
+//{
+//    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+//    db.Database.Migrate();
+//}
 
 
 if (swaggerFlag) {

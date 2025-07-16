@@ -15,19 +15,25 @@ namespace BACKEND_STORE.Config
             _flagSaveDB = bool.TryParse(configuration["STORE_CONFIG_SAVEDB"], out var flag) && flag;
         }
 
-        public void SaveLog(string message)
+        public bool SaveLog(string message)
         {
             try
             {
-                if (!_flagSaveDB || string.IsNullOrEmpty(_logsPath))
-                    return;
+                switch (_flagSaveDB) {
+                    case true: //  
+                        return false;
+                    case false:
+                        string path;
+                        path = string.IsNullOrEmpty(_logsPath) ? AppContext.BaseDirectory + "Logs" : _logsPath;
 
-                Directory.CreateDirectory(_logsPath);
+                        string fullPath = Path.Combine(path, $"log_{DateTime.Now:yyyyMMdd}.txt");
+                        string logMessage = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}{Environment.NewLine}";
 
-                string fullPath = Path.Combine(_logsPath, $"log_{DateTime.Now:yyyyMMdd}.txt");
-                string logMessage = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}{Environment.NewLine}";
-
-                File.AppendAllText(fullPath, logMessage);
+                        File.AppendAllText(fullPath, logMessage);
+                        return true;
+                    default:
+                        throw new InvalidOperationException("La configuración de guardado de logs no es válida.");
+                }
             }
             catch (Exception ex)
             {
@@ -39,9 +45,11 @@ namespace BACKEND_STORE.Config
                         Path.Combine(crashDir, $"crash_{DateTime.Now:yyyyMMdd}.txt"),
                         $"[{DateTime.Now}] Error al guardar log: {ex.Message}{Environment.NewLine}"
                     );
+                    return false;
                 }
                 catch
                 {
+                    return false;
                     // Pray for your life
                 }
             }

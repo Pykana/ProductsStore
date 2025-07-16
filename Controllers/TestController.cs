@@ -1,6 +1,7 @@
 ﻿using BACKEND_STORE.Interfaces.IService;
 using BACKEND_STORE.Models.GET;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace BACKEND_STORE.Controllers
 {
@@ -14,7 +15,7 @@ namespace BACKEND_STORE.Controllers
             _TestService = TestService;
         }
 
-        [HttpGet("conexion")]
+        [HttpGet("ProbarConexion")]
         public async Task<IActionResult> ProbarConexion()
         {
             try { 
@@ -34,5 +35,56 @@ namespace BACKEND_STORE.Controllers
                 return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
         }
+
+        [HttpGet("VerVaribalesDeEntorno")]
+        public async Task<IActionResult> VerVaribalesDeEntorno( )
+        {
+            try
+            {
+                StoreConfig resultado = await _TestService.VerVaribalesDeEntorno();
+                return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+            }
+        }
+
+        [HttpGet("VerificarEncriptamiento")]
+        public async Task<IActionResult> VerificarEncriptamiento(
+            [Required(ErrorMessage ="Ingrese una contraseña")]
+            [MinLength(8,ErrorMessage ="La contraseña debe tener al menos 8 caracteres")]string contraseña)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(contraseña))
+                    return BadRequest("La contraseña no puede estar vacía.");
+                string resultado = await _TestService.VerificarEncriptamiento(contraseña);
+                return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+            }
+        }
+
+        [HttpGet("VerificarLogs")]
+        public async Task<IActionResult> VerificarLogs(
+            [Required(ErrorMessage ="Debe Ingresar un mensaje")]
+            [MinLength(10,ErrorMessage ="El menasje debe tner al menos 10 caracteres")]string Mensaje)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(Mensaje))
+                    return BadRequest("El mensaje no puede estar vacío.");
+                string resultado = await _TestService.VerificarLogs(Mensaje);
+                return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+            }
+        }
+
     }
 }
