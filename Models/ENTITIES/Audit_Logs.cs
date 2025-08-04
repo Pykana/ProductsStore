@@ -14,6 +14,7 @@
         public string OldValues { get; set; }       // JSON con datos antes del cambio
         public string NewValues { get; set; }       // JSON con datos después del cambio
         public string ColumnNames { get; set; }     // Columnas afectadas
+        public int UserId { get; set; }             // ID del usuario que realizó la operación
         public Users ChangedBy { get; set; }         // Usuario relacionado con el registro de auditoría
     }
 }
