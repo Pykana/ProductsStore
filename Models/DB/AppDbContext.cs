@@ -80,8 +80,8 @@ namespace BACKEND_STORE.Models.DB
                         .HasColumnName("UserId")                // Nombre de la columna en la base de datos
                         .IsRequired();                          // Es obligatoria  
 
-                entity.Property(e => e.ChangedBy)
-                        .HasColumnName("Changed_By");           // Nombre de la columna en la base de datos
+                //entity.Property(e => e.ChangedBy)
+                //        .HasColumnName("Changed_By");           // Nombre de la columna en la base de datos
 
                 entity.HasOne(e => e.ChangedBy)                 // Relación con la entidad Users
                       .WithMany()                               // Muchos a uno
@@ -96,8 +96,10 @@ namespace BACKEND_STORE.Models.DB
 
             modelBuilder.Entity<Customers>(entity => {
                 entity.ToTable("Customers");                    // Nombre de la tabla en la base de datos
+
                 entity.HasKey(e => e.Id_Customer);              // Primary key
                 entity.Property(e => e.Id_Customer)             // Primary key property
+                      .HasColumnName("Id_Customer")             // Nombre de la columna en la base de datos  .
                       .ValueGeneratedOnAdd();                   // auto-increment
 
                 entity.Property(e => e.customer_name)
@@ -111,6 +113,7 @@ namespace BACKEND_STORE.Models.DB
                 entity.Property(e => e.customer_phone)
                     .IsRequired();                              // Es obligatoria
                     
+
 
             });
             modelBuilder.Entity<Customer_User>(entity => {
