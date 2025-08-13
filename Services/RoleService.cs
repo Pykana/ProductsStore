@@ -29,6 +29,10 @@ namespace BACKEND_STORE.Services
             return await _roleRepository.UpdateRole(data);
         }
        
+        public async Task<GenericResponseDTO> DeleteRole(int id, string user)
+        {
+            return await _roleRepository.DeleteRole(id,  user);
+        }
 
     }
 }

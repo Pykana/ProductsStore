@@ -146,7 +146,51 @@ namespace BACKEND_STORE.Repositories
                 _logs.SaveLog($"Error updating role: {ex.Message}");
                 throw;
             }
+        }
+        public async Task<GenericResponseDTO> DeleteRole(int id,string  user)
+        {
+            try
+            {
+                _logs.SaveLog($"Iniciando Eliminar Role con ID : {id}");
+                var role = await _context.Roles.FindAsync(id);
+                if (role == null)
+                {
+                    _logs.SaveLog($"Role with ID {id} not found.");
+                    return new GenericResponseDTO
+                    {
+                        Success = false,
+                        Message = "Role not found."
+                    };
+                }
+                role.is_active = false;
+                role.deleted_at = DateTime.UtcNow;
+                role.deleted_by = user; 
+                _context.Roles.Update(role);
 
+                if (await _context.SaveChangesAsync() > 0)
+                {
+                    _logs.SaveLog($"Role {id} deleted successfully.");
+                    return new GenericResponseDTO
+                    {
+                        Success = true,
+                        Message = "Role deleted successfully."
+                    };
+                }
+                else
+                {
+                    _logs.SaveLog("Failed to delete role.");
+                    return new GenericResponseDTO
+                    {
+                        Success = false,
+                        Message = "Failed to delete role."
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                _logs.SaveLog($"Error deleting role: {ex.Message}");
+                throw;
+            }
         }
     }
 }

@@ -10,5 +10,6 @@ namespace BACKEND_STORE.Interfaces.IRepository
         Task<IEnumerable<RolePost>> GetRoles();
         Task<RolePost> CreateRole(RoleRequestPost data);
         Task<GenericResponseDTO> UpdateRole(RoleRequestPut data);
+        Task<GenericResponseDTO> DeleteRole(int id, string user);
     }
 }

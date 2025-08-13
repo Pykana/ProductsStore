@@ -37,3 +37,23 @@
 2025-08-13 17:13:03 - Role 2 updated successfully.
 2025-08-13 17:13:09 - Found 2 roles users.
 2025-08-13 17:13:09 - Result: [{"Id_Role":1,"role_name":"Admin","role_description":"Rol de Administrador"},{"Id_Role":2,"role_name":"Trabajador","role_description":"Usuario Trabajador"}]
+2025-08-13 17:29:33 - Found 2 roles users.
+2025-08-13 17:29:33 - Result: [{"Id_Role":1,"role_name":"Admin","role_description":"Rol de Administrador"},{"Id_Role":2,"role_name":"Trabajador","role_description":"Usuario Trabajador"}]
+2025-08-13 17:30:09 - Iniciando Crear Role con Data : {"role_name":"Visitante","role_description":"Rol de usuario visitante","IsActive":true,"create_by":"root"}
+2025-08-13 17:30:09 - Error creating role: Collection was modified; enumeration operation may not execute.
+2025-08-13 17:30:31 - Iniciando Crear Role con Data : {"role_name":"Visitante","role_description":"Rol de usuario visitante","IsActive":true,"create_by":"root"}
+2025-08-13 17:31:20 - Error creating role: Collection was modified; enumeration operation may not execute.
+2025-08-13 17:32:52 - Iniciando Crear Role con Data : {"role_name":"Visitante","role_description":"Rol de visitante","IsActive":true,"create_by":"root"}
+2025-08-13 17:32:52 - Error creating role: An error occurred while saving the entity changes. See the inner exception for details.
+2025-08-13 17:33:30 - Iniciando Crear Role con Data : {"role_name":"Visitante","role_description":"Rol de visitante","IsActive":true,"create_by":"root"}
+2025-08-13 17:33:37 - Error creating role: An error occurred while saving the entity changes. See the inner exception for details.
+2025-08-13 17:35:34 - Iniciando Crear Role con Data : {"role_name":"Visitante","role_description":"rol de visitante","IsActive":true,"create_by":"root"}
+2025-08-13 17:35:35 - Role Visitante created successfully.
+2025-08-13 17:35:52 - Found 3 roles users.
+2025-08-13 17:35:52 - Result: [{"Id_Role":1,"role_name":"Admin","role_description":"Rol de Administrador"},{"Id_Role":2,"role_name":"Trabajador","role_description":"Usuario Trabajador"},{"Id_Role":5,"role_name":"Visitante","role_description":"rol de visitante"}]
+2025-08-13 17:42:11 - Iniciando Eliminar Role con ID : 6
+2025-08-13 17:42:12 - Role with ID 6 not found.
+2025-08-13 17:42:21 - Iniciando Eliminar Role con ID : 5
+2025-08-13 17:42:22 - Role 5 deleted successfully.
+2025-08-13 17:42:27 - Found 2 roles users.
+2025-08-13 17:42:27 - Result: [{"Id_Role":1,"role_name":"Admin","role_description":"Rol de Administrador"},{"Id_Role":2,"role_name":"Trabajador","role_description":"Usuario Trabajador"}]

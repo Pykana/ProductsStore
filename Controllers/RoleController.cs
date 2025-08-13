@@ -82,5 +82,27 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
+        [HttpDelete("DeleteRole")]
+        public async Task<IActionResult> DeleteRole([FromQuery] int id , string user)
+        {
+            try
+            {
+                GenericResponseDTO result = await _roleService.DeleteRole(id, user);
+                return Ok(result);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest($"Error de argumento: {ex.Message}");
+            }
+            catch (InvalidOperationException ex)
+            {
+                return Conflict($"Operación inválida: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+            }
+        }
+
     }
 }

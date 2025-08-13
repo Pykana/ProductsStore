@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using BACKEND_STORE.Models.ENTITIES;
+﻿using BACKEND_STORE.Models.ENTITIES;
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 namespace BACKEND_STORE.Models.DB
 {
@@ -11,6 +12,25 @@ namespace BACKEND_STORE.Models.DB
             : base(options)
         {
         }
+
+        public override int SaveChanges()
+        {
+            AddAuditLogs();
+            return base.SaveChanges();
+        }
+
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            AddAuditLogs();
+            return await base.SaveChangesAsync(cancellationToken);
+        }
+
+        private void AddAuditLogs()
+        {
+           Console.WriteLine("Audit log triggered");
+        }
+
+
 
         /// <summary>
         /// DBSet representa una colección de todas las entidades en la base de datos
