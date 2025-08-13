@@ -16,6 +16,7 @@
         public string created_by { get; set; } // Usuario que creó el rol
         public string updated_by { get; set; } // Usuario que actualizó el rol
         public string deleted_by { get; set; } // Usuario que eliminó el rol
+
         public ICollection<Users> Users { get; set; } = new List<Users>(); // Relación con usuarios
     }
 }

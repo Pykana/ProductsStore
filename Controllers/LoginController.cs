@@ -1,7 +1,5 @@
 ﻿using BACKEND_STORE.Interfaces.IService;
-using static BACKEND_STORE.Models.DTO.LoginDTO;
-using static BACKEND_STORE.Models.POST.Login;
-using static BACKEND_STORE.Models.GET.Login;
+using static BACKEND_STORE.Models.Login;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BACKEND_STORE.Controllers

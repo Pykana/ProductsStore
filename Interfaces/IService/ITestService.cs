@@ -1,4 +1,4 @@
-﻿using BACKEND_STORE.Models.GET;
+﻿using BACKEND_STORE.Models;
 
 namespace BACKEND_STORE.Interfaces.IService
 {

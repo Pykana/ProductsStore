@@ -1,25 +1,22 @@
 ﻿using BACKEND_STORE.Interfaces.IService;
-using static BACKEND_STORE.Models.DTO.LoginDTO;
-using static BACKEND_STORE.Models.POST.Login;
-using static BACKEND_STORE.Models.GET.Login;
+using static BACKEND_STORE.Models.Login;
+using BACKEND_STORE.Interfaces.IRepository;
 
 namespace BACKEND_STORE.Services
 {
     public class LoginService : ILoginService
     {
-        private readonly ILoginService _LoginService;
-        public LoginService(ILoginService LoginService)
+        private readonly ILoginRepository _loginRepository;
+        public LoginService(ILoginRepository loginRepository)
         {
-            _LoginService = LoginService;
+            _loginRepository = loginRepository;
         }
 
 
         public async Task<LoginResponse> Register(registerPOST dataUser)
         {
-            return await _LoginService.Register(dataUser);
+            return await _loginRepository.Register(dataUser);
         }
-
-
 
     }
 }

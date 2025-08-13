@@ -1,5 +1,4 @@
-﻿using static BACKEND_STORE.Models.DTO.LoginDTO;
-using static BACKEND_STORE.Models.POST.Login;
+﻿using static BACKEND_STORE.Models.Login;
 
 namespace BACKEND_STORE.Interfaces.IRepository
 {

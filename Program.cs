@@ -55,6 +55,7 @@ builder.Services.AddEndpointsApiExplorer();
 if (swaggerFlag) {
     builder.Services.AddSwaggerGen();
 }
+
 // Inyeccion de logs y configuracion de timezone
 builder.Services.AddSingleton<Logs>();
 builder.Services.AddSingleton<TimeZoneService>();
@@ -78,9 +79,13 @@ builder.Services.AddResponseCompression(options =>
 
 // Registro correcto de repositorio e interfaz
 builder.Services.AddScoped<ITestRepository, TestRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 
 // Registro correcto del servicio e interfaz
 builder.Services.AddScoped<ITestService, TestService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
 
 
 builder.Services.AddControllers()

@@ -1,4 +1,4 @@
-﻿namespace BACKEND_STORE.Models.GET
+﻿namespace BACKEND_STORE.Models
 {
     public class Test
     {

@@ -19,7 +19,8 @@
         public string created_by { get; set; } // Usuario que creó el usuario
         public string updated_by { get; set; } // Usuario que actualizó el usuario
         public string deleted_by { get; set; } // Usuario que eliminó el usuario
-        public ICollection<Customer_User> CustomerUsers { get; set; } = new List<Customer_User>();  // Relación3
+        public ICollection<Customer_User> CustomerUsers { get; set; } = new List<Customer_User>();  // Relación
+        public int RoleId { get; set; } // clave foránea visible
         public Roles Role { get; set; } // Relación con roles   
     }
 }

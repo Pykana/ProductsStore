@@ -1,6 +1,6 @@
 ﻿using BACKEND_STORE.Interfaces.IRepository;
 using BACKEND_STORE.Interfaces.IService;
-using BACKEND_STORE.Models.GET;
+using BACKEND_STORE.Models;
 using BACKEND_STORE.Repositories;
 
 namespace BACKEND_STORE.Services

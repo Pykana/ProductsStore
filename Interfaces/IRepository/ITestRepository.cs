@@ -1,4 +1,4 @@
-﻿using BACKEND_STORE.Models.GET;
+﻿using BACKEND_STORE.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BACKEND_STORE.Interfaces.IRepository

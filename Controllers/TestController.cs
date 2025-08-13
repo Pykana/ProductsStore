@@ -1,5 +1,5 @@
 ﻿using BACKEND_STORE.Interfaces.IService;
-using BACKEND_STORE.Models.GET;
+using BACKEND_STORE.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 

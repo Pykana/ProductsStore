@@ -6,7 +6,6 @@
 
     public class Customer_User
     {
-        public int Id_CustomerUser { get; set; } // ID de la relación cliente-usuario
         public int customer_id { get; set; } // ID del cliente
         public int user_id { get; set; } // ID del usuario
         public DateTime created_at { get; set; } // Fecha de creación de la relación
