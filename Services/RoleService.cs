@@ -18,7 +18,11 @@ namespace BACKEND_STORE.Services
         {
             return await _roleRepository.GetRoles();
         }
-
+        public async Task<RolePost> GetRolesById(int id)
+        {
+            return await _roleRepository.GetRolesById(id);
+        }
+        
         public async Task<RolePost> CreateRole(RoleRequestPost data)
         {
             return await _roleRepository.CreateRole(data);

@@ -13,13 +13,11 @@ namespace BACKEND_STORE.Repositories
     public class RoleRepository : IRoleRepository
     {
         private readonly AppDbContext _context;  // DbContext for database operations
-        private readonly Encryption _encryption; // Encryption service for password hashings
         private readonly Logs _logs; // Logging service for logging messages
 
         public RoleRepository(AppDbContext context, Encryption encryption, Logs logs)
         {
             _context = context;
-            _encryption = encryption;
             _logs = logs;
         }
         public async Task<IEnumerable<RolePost>> GetRoles()
@@ -57,6 +55,33 @@ namespace BACKEND_STORE.Repositories
             }
         }
 
+        public async Task<RolePost> GetRolesById(int id)
+        {
+            try
+            { 
+                var role = await _context.Roles
+                    .Where(r => r.Id_Role == id && r.is_active)
+                    .Select(r => new RolePost
+                    {
+                        Id_Role = r.Id_Role,
+                        role_name = r.role_name,
+                        role_description = r.role_description
+                    })
+                    .FirstOrDefaultAsync();
+                if (role == null)
+                {
+                    _logs.SaveLog($"Role with ID {id} not found.");
+                    return null;
+                }
+                _logs.SaveLog("Result: " + JsonSerializer.Serialize(role));
+                return role;
+            }
+            catch(Exception ex)
+            {
+                _logs.SaveLog($"Error retrieving role by ID: {ex.Message}");
+                throw;
+            }
+        }
 
         public async Task<RolePost> CreateRole(RoleRequestPost data)
         {

@@ -1,7 +1,9 @@
 ﻿using BACKEND_STORE.Interfaces.IService;
 using BACKEND_STORE.Models;
 using BACKEND_STORE.Models.ENTITIES;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using static BACKEND_STORE.Models.Role;
 
 namespace BACKEND_STORE.Controllers
@@ -36,6 +38,29 @@ namespace BACKEND_STORE.Controllers
                 return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
         }
+
+        [HttpGet("GetRoleByID")]
+        public async Task<IActionResult> GetRolesById([Required(ErrorMessage ="El ID es obligatorio")] int id)
+        {
+            try
+            {
+                RolePost roles = await _roleService.GetRolesById(id);
+                return Ok(roles);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound($"Error: {ex.Message}");
+            }
+            catch (ArgumentNullException ex)
+            {
+                return BadRequest($"Error: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+            }
+        }
+
 
 
         [HttpPost("CreateRole")]
@@ -82,6 +107,7 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete("DeleteRole")]
         public async Task<IActionResult> DeleteRole([FromQuery] int id , string user)
         {

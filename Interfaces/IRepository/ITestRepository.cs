@@ -9,6 +9,5 @@ namespace BACKEND_STORE.Interfaces.IRepository
         Task<StoreConfig> VerVaribalesDeEntorno();
         Task<string> VerificarEncriptamiento(string contraseña);
         Task<string> VerificarLogs(string Mensaje);
-
     }
 }

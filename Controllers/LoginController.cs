@@ -1,6 +1,7 @@
 ﻿using BACKEND_STORE.Interfaces.IService;
-using static BACKEND_STORE.Models.Login;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static BACKEND_STORE.Models.Login;
 
 namespace BACKEND_STORE.Controllers
 {
@@ -14,6 +15,7 @@ namespace BACKEND_STORE.Controllers
             _LoginService = LoginService;
         }
 
+        [Authorize]
         [HttpPost("RegisterNewUser")]
         public async Task<IActionResult> RegisterNewUser([FromBody] registerPOST dataUser)
         {

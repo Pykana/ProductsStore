@@ -1,10 +1,13 @@
 ﻿using BACKEND_STORE.Interfaces.IService;
 using BACKEND_STORE.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 
 namespace BACKEND_STORE.Controllers
 {
+    [Authorize(Roles = "1")]
     [Route("api/[controller]")]
     [ApiController]
     public class TestController : ControllerBase
@@ -14,11 +17,20 @@ namespace BACKEND_STORE.Controllers
         {
             _TestService = TestService;
         }
-
+        
         [HttpGet("ProbarConexion")]
         public async Task<IActionResult> ProbarConexion()
         {
-            try { 
+            try {
+
+                var roleId = User.FindFirstValue(ClaimTypes.Role);
+
+                if (roleId != "1")
+                {
+                    return Forbid(); 
+                }
+
+
                 Test resultado = await _TestService.ProbarConexion();
 
                 switch (resultado.Value) {
@@ -41,6 +53,12 @@ namespace BACKEND_STORE.Controllers
         {
             try
             {
+                var roleId = User.FindFirstValue(ClaimTypes.Role);
+
+                if (roleId != "1")
+                {
+                    return Forbid();
+                }
                 StoreConfig resultado = await _TestService.VerVaribalesDeEntorno();
                 return Ok(resultado);
             }
@@ -57,6 +75,13 @@ namespace BACKEND_STORE.Controllers
         {
             try
             {
+                var roleId = User.FindFirstValue(ClaimTypes.Role);
+
+                if (roleId != "1")
+                {
+                    return Forbid();
+                }
+
                 if (string.IsNullOrEmpty(contraseña))
                     return BadRequest("La contraseña no puede estar vacía.");
                 string resultado = await _TestService.VerificarEncriptamiento(contraseña);
@@ -75,6 +100,13 @@ namespace BACKEND_STORE.Controllers
         {
             try
             {
+                var roleId = User.FindFirstValue(ClaimTypes.Role);
+
+                if (roleId != "1")
+                {
+                    return Forbid();
+                }
+
                 if (string.IsNullOrEmpty(Mensaje))
                     return BadRequest("El mensaje no puede estar vacío.");
                 string resultado = await _TestService.VerificarLogs(Mensaje);

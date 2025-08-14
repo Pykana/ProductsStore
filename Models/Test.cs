@@ -12,6 +12,7 @@
         public EmailConfig Email { get; set; } = new();
         public LogConfig Logs { get; set; } = new();
         public ApiConfig Api { get; set; } = new();
+        public JWTConfig JWT { get; set; } = new();
         public ExternalUrlsConfig ExternalUrls { get; set; } = new();
     }
 
@@ -47,6 +48,14 @@
         public bool SwaggerEnabled { get; set; }
         public bool SaveToDatabase { get; set; }
         public string CorsOrigins { get; set; } = string.Empty;
+    }
+
+    public class JWTConfig
+    {
+        public string STORE_JWT_SECRET_KEY { get; set; } = string.Empty;
+        public string STORE_JWT_ISSUER { get; set; } = string.Empty;
+        public string STORE_JWT_AUDIENCE { get; set; } = string.Empty;
+        public string STORE_JWT_EXPIRATION_MINUTES { get; set; } = string.Empty;
     }
 
     public class ExternalUrlsConfig

@@ -85,6 +85,13 @@ namespace BACKEND_STORE.Repositories
                         SaveToDatabase = bool.TryParse(Environment.GetEnvironmentVariable("STORE_CONFIG_SAVEDB"), out var saveDb) && saveDb,
                         CorsOrigins = Environment.GetEnvironmentVariable("STORE_CONFIG_CORS_ORIGINS") ?? ""
                     },
+                    JWT = new JWTConfig
+                    {
+                        STORE_JWT_SECRET_KEY = Environment.GetEnvironmentVariable("STORE_JWT_SECRET_KEY") ?? "",
+                        STORE_JWT_ISSUER = Environment.GetEnvironmentVariable("STORE_JWT_ISSUER") ?? "",
+                        STORE_JWT_AUDIENCE = Environment.GetEnvironmentVariable("STORE_JWT_AUDIENCE") ?? "",
+                        STORE_JWT_EXPIRATION_MINUTES = Environment.GetEnvironmentVariable("STORE_JWT_EXPIRATION_MINUTES") ?? ""
+                    },
                     ExternalUrls = new ExternalUrlsConfig
                     {
                         Url1 = Environment.GetEnvironmentVariable("STORE_EXTERNAL_URL") ?? "",

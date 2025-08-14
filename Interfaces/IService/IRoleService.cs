@@ -8,6 +8,7 @@ namespace BACKEND_STORE.Interfaces.IService
     {
         Task<IEnumerable<RolePost>> GetRoles();
         Task<RolePost> CreateRole(RoleRequestPost data);
+        Task<RolePost> GetRolesById(int id);
         Task<GenericResponseDTO> UpdateRole(RoleRequestPut data);
         Task<GenericResponseDTO> DeleteRole(int id, string user);
 
