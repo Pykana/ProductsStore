@@ -19,6 +19,8 @@ namespace BACKEND_STORE.Controllers
         }
         
         [HttpGet("ProbarConexion")]
+        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any, NoStore = false)]
+        [ProducesResponseType(typeof(Test), 200)]
         public async Task<IActionResult> ProbarConexion()
         {
             try {
@@ -49,6 +51,7 @@ namespace BACKEND_STORE.Controllers
         }
 
         [HttpGet("VerVaribalesDeEntorno")]
+        [ProducesResponseType(typeof(StoreConfig), 200)]
         public async Task<IActionResult> VerVaribalesDeEntorno( )
         {
             try
@@ -69,6 +72,7 @@ namespace BACKEND_STORE.Controllers
         }
 
         [HttpGet("VerificarEncriptamiento")]
+        [ProducesResponseType(typeof(string), 200)]
         public async Task<IActionResult> VerificarEncriptamiento(
             [Required(ErrorMessage ="Ingrese una contraseña")]
             [MinLength(8,ErrorMessage ="La contraseña debe tener al menos 8 caracteres")]string contraseña)
@@ -94,6 +98,8 @@ namespace BACKEND_STORE.Controllers
         }
 
         [HttpGet("VerificarLogs")]
+        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any, NoStore = false)]
+        [ProducesResponseType(typeof(string), 200)]
         public async Task<IActionResult> VerificarLogs(
             [Required(ErrorMessage ="Debe Ingresar un mensaje")]
             [MinLength(10,ErrorMessage ="El menasje debe tner al menos 10 caracteres")]string Mensaje)

@@ -58,3 +58,40 @@
 2025-08-14 15:52:58 - Result: [{"Id_Role":1,"role_name":"Admin","role_description":"Rol de Administrador"},{"Id_Role":2,"role_name":"Trabajador","role_description":"Usuario Trabajador"}]
 2025-08-14 15:56:26 - Found 2 roles users.
 2025-08-14 15:56:26 - Result: [{"Id_Role":1,"role_name":"Admin","role_description":"Rol de Administrador"},{"Id_Role":2,"role_name":"Trabajador","role_description":"Usuario Trabajador"}]
+2025-08-14 16:10:58 - Found 2 roles users.
+2025-08-14 16:10:58 - Result: [{"Id_Role":1,"role_name":"Admin","role_description":"Rol de Administrador"},{"Id_Role":2,"role_name":"Trabajador","role_description":"Usuario Trabajador"}]
+2025-08-14 17:00:06 - User string not found or inactive.
+2025-08-14 17:00:14 - User 1 not found or inactive.
+2025-08-14 17:01:17 - Error in LoginUser: Object reference not set to an instance of an object.
+2025-08-14 17:03:06 - Error in LoginUser: Object reference not set to an instance of an object.
+2025-08-14 17:04:04 - User Admin logged in successfully.
+2025-08-14 17:04:12 - User Admin logged in successfully.
+2025-08-14 17:04:32 - User Admin logged in successfully.
+2025-08-14 17:06:34 - User Admin logged in successfully.
+2025-08-14 17:08:24 - User Admin logged in successfully.
+2025-08-14 17:09:24 - User Admin logged in successfully.
+2025-08-14 17:19:13 - User Admin logged in successfully.
+2025-08-14 21:37:47 - User Admin logged in successfully.
+2025-08-14 21:47:22 - User Admin logged in successfully.
+2025-08-14 21:47:57 - Found 2 roles users.
+2025-08-14 21:47:57 - Result: [{"Id_Role":1,"role_name":"Admin","role_description":"Rol de Administrador"},{"Id_Role":2,"role_name":"Trabajador","role_description":"Usuario Trabajador"}]
+2025-08-14 21:47:59 - Found 2 roles users.
+2025-08-14 21:47:59 - Result: [{"Id_Role":1,"role_name":"Admin","role_description":"Rol de Administrador"},{"Id_Role":2,"role_name":"Trabajador","role_description":"Usuario Trabajador"}]
+2025-08-14 21:48:00 - Found 2 roles users.
+2025-08-14 21:48:00 - Result: [{"Id_Role":1,"role_name":"Admin","role_description":"Rol de Administrador"},{"Id_Role":2,"role_name":"Trabajador","role_description":"Usuario Trabajador"}]
+2025-08-14 21:51:18 - Iniciando GetAllUsers
+2025-08-14 21:51:18 - Found 1 active users.
+2025-08-14 21:51:18 - Result: [{"Id_User":3,"username":"Admin","password":"GcS7iXg5FDVQTRYDDqDKXl5WNc3F4AXs/64yGV6vZfRHPXpASJu6JKUdLNgkJdto","email":"Amin@gmail.com","name":"Nombre","lastname":"Apellido","created_at":"2025-08-14T00:00:00","updated_at":"2025-08-14T00:00:00","deleted_at":"2025-08-14T00:00:00","is_active":true,"created_by":"Admin","updated_by":null,"deleted_by":"Root","CustomerUsers":[],"RoleId":2,"Role":null}]
+2025-08-14 21:51:55 - Iniciando GetAllUsers
+2025-08-14 21:51:55 - Found 1 active users.
+2025-08-14 21:51:55 - Result: [{"Id_User":3,"username":"Admin","password":"GcS7iXg5FDVQTRYDDqDKXl5WNc3F4AXs/64yGV6vZfRHPXpASJu6JKUdLNgkJdto","email":"Amin@gmail.com","name":"Nombre","lastname":"Apellido","created_at":"2025-08-14T00:00:00","updated_at":"2025-08-14T00:00:00","deleted_at":"2025-08-14T00:00:00","is_active":true,"created_by":"Admin","updated_by":null,"deleted_by":"Root","CustomerUsers":[],"RoleId":2,"Role":null}]
+2025-08-14 21:52:02 - Iniciando GetUserById con ID: 1
+2025-08-14 21:52:03 - Error in GetUserById: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+2025-08-14 21:52:04 - Iniciando GetUserById con ID: 0
+2025-08-14 21:52:04 - Error in GetUserById: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+2025-08-14 21:52:07 - Iniciando GetUserById con ID: 1
+2025-08-14 21:52:07 - Error in GetUserById: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+2025-08-14 21:52:35 - Iniciando GetUserById con ID: 1
+2025-08-14 21:52:35 - Error in GetUserById: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+2025-08-14 21:52:40 - Iniciando GetUserById con ID: 0
+2025-08-14 21:52:40 - Error in GetUserById: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.

@@ -5,5 +5,6 @@ namespace BACKEND_STORE.Interfaces.IRepository
     public interface ILoginRepository
     {
        Task<LoginResponse> Register(registerPOST dataUser);
+       Task<LoginResponse> Login(login dataUser);
     }
 }

@@ -3,11 +3,11 @@ using BACKEND_STORE.Models;
 using BACKEND_STORE.Models.ENTITIES;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using static BACKEND_STORE.Models.User;
 
 namespace BACKEND_STORE.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -18,7 +18,9 @@ namespace BACKEND_STORE.Controllers
             _userService = userService;
         }
 
+        [Authorize(Roles = "1,2")]
         [HttpGet("GetUsers")]
+        [ProducesResponseType(typeof(IEnumerable<Users>), 200)]
         public ActionResult GetAllUsers() {
             try
             {
@@ -39,8 +41,10 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
+        [Authorize(Roles = "1,2")]
         [HttpGet("UserById")]
-        public async Task<IActionResult> GetUserById(int id)
+        [ProducesResponseType(typeof(userDTO), 200)]
+        public async Task<IActionResult> GetUserById([Required(ErrorMessage ="Debe ingresar un ID")]int id)
         {
             try
             {
@@ -61,8 +65,9 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
-
+        [Authorize(Roles = "1,2")]
         [HttpPost("CreateUser")]
+        [ProducesResponseType(typeof(GenericResponseDTO), 200)] 
         public async Task<IActionResult> CreateUser([FromBody] UserRequestPost data)
         {
             try
@@ -84,8 +89,9 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
-      
+        [Authorize(Roles = "1,2")]
         [HttpPut("UpdateUser")]
+        [ProducesResponseType(typeof(GenericResponseDTO), 200)]
         public async Task<IActionResult> UpdateUser([FromBody] UserRequestPut data)
         {
             try
@@ -109,6 +115,7 @@ namespace BACKEND_STORE.Controllers
 
         [Authorize(Roles = "1")]
         [HttpDelete("DeleteUser")]
+        [ProducesResponseType(typeof(GenericResponseDTO), 200)]
         public async Task<IActionResult> DeleteUser(int id, string pass, string Actual_User)
         {
             try

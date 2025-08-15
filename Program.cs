@@ -1,4 +1,4 @@
-using BACKEND_STORE.Config;
+﻿using BACKEND_STORE.Config;
 using BACKEND_STORE.Interfaces.IRepository;
 using BACKEND_STORE.Interfaces.IService;
 using BACKEND_STORE.Models.DB;
@@ -9,6 +9,7 @@ using DotNetEnv;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System.Text;
 using System.Text.Json.Serialization;
 using static BACKEND_STORE.Config.JWT;
@@ -49,10 +50,14 @@ SetConfig("STORE_EXTERNAL_URL", Environment.GetEnvironmentVariable("STORE_EXTERN
 SetConfig("STORE_EXTERNAL_URL2", Environment.GetEnvironmentVariable("STORE_EXTERNAL_URL2"));
 
 //JWT
-SetConfig("STORE_JWT_SECRET_KEY", Environment.GetEnvironmentVariable("STORE_JWT_SECRET_KEY"));
-SetConfig("STORE_JWT_ISSUER", Environment.GetEnvironmentVariable("STORE_JWT_ISSUER"));
-SetConfig("STORE_JWT_AUDIENCE", Environment.GetEnvironmentVariable("STORE_JWT_AUDIENCE"));
-SetConfig("STORE_JWT_EXPIRATION_MINUTES", Environment.GetEnvironmentVariable("STORE_JWT_EXPIRATION_MINUTES"));
+
+var jwtSettings = new JWTSettings
+{
+    SecretKey = Environment.GetEnvironmentVariable("STORE_JWT_SECRET_KEY") ?? "",
+    Issuer = Environment.GetEnvironmentVariable("STORE_JWT_ISSUER") ?? "",
+    Audience = Environment.GetEnvironmentVariable("STORE_JWT_AUDIENCE") ?? "",
+    ExpirationMinutes = int.TryParse(Environment.GetEnvironmentVariable("STORE_JWT_EXPIRATION_MINUTES"), out var exp) ? exp : 60
+};
 
 bool swaggerFlag = bool.TryParse(Environment.GetEnvironmentVariable("STORE_CONFIG_SWAGGER"), out var flag) && flag;  
 
@@ -64,41 +69,14 @@ builder.Services.AddEndpointsApiExplorer();
 
 if (swaggerFlag) {
     builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen(c =>
-    {
-        // Configuraci?n para que Swagger acepte JWTS
-        c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-        {
-            Name = "Authorization",
-            Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
-            Scheme = "Bearer",
-            BearerFormat = "JWT",
-            In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-            Description = "Introduce el token en el formato: Bearer {tu token}"
-        });
-
-        c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
-    {
-        {
-            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-            {
-                Reference = new Microsoft.OpenApi.Models.OpenApiReference
-                {
-                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            },
-            new string[] {}
-        }
-    });
-    });
-
+  
 }
 
 // Inyeccion de logs y configuracion de timezone
 builder.Services.AddSingleton<Logs>();
 builder.Services.AddSingleton<TimeZoneService>();
 builder.Services.AddSingleton<Encryption>();
+builder.Services.AddSingleton(jwtSettings);
 
 builder.Services.AddCors(options =>
 {
@@ -117,15 +95,16 @@ builder.Services.AddResponseCompression(options =>
 });
 
 // Registro correcto de repositorio e interfaz
+builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 builder.Services.AddScoped<ITestRepository, TestRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
-
+ 
 // Registro correcto del servicio e interfaz
+builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<ITestService, TestService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
-
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
@@ -134,27 +113,98 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
     });
 
-// Configurar autenticaci?n JWT
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = Environment.GetEnvironmentVariable("STORE_JWT_ISSUER"),
-            ValidAudience = Environment.GetEnvironmentVariable("STORE_JWT_AUDIENCE"),
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("STORE_JWT_SECRET_KEY")))
-        };
-    });
-
 string ConnectionString = Connection.SQLServerConnection(builder.Configuration);
 
 // Configuracion de la base de datos
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(ConnectionString));
+
+
+// 1️⃣ Vincular sección "JWT" del appsettings.json (o variables de entorno) con la clase JWTSettings
+builder.Services.Configure<JWTSettings>(
+    builder.Configuration.GetSection("JWT")
+);
+
+// 2️⃣ Registrar Token como servicio
+builder.Services.AddTransient<Token>();
+
+// Configuración de Swagger con autenticación JWT
+builder.Services.AddSwaggerGen(c =>
+{
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Ingrese el token JWT generado al hacer login"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+});
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtSettings.Issuer,
+        ValidAudience = jwtSettings.Audience,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey))
+    };
+
+    options.Events = new JwtBearerEvents
+    {
+        OnChallenge = context =>
+        {
+            // Evita que se ejecute la respuesta por defecto
+            context.HandleResponse();
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            context.Response.ContentType = "application/json";
+            return context.Response.WriteAsync("{\"message\":\"No estás autorizado\"}");
+        },
+        OnAuthenticationFailed = context =>
+        {
+            context.NoResult();
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            context.Response.ContentType = "application/json";
+
+            if (context.Exception is SecurityTokenExpiredException)
+            {
+                return context.Response.WriteAsync("{\"message\":\"El token ha expirado\"}");
+            }
+            else
+            {
+                return context.Response.WriteAsync("{\"message\":\"Token inválido\"}");
+            }
+        }
+
+
+    };
+});
+
 
 var app = builder.Build();
 
@@ -173,10 +223,10 @@ if (swaggerFlag) {
         app.UseSwaggerUI();
     }
 }
-
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseHttpsRedirection();
 app.UseCors("StoreCorsPolicy");
-app.UseAuthorization();
 app.UseResponseCompression();
 app.MapControllers();
 app.Run();

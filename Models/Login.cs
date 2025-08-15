@@ -34,7 +34,7 @@ namespace BACKEND_STORE.Models
         }
 
 
-        public class loginGET
+        public class login
         {
             [Required(ErrorMessage = "El campo Nombre de Usuario es obligatorio")]
             public string username { get; set; }
@@ -51,7 +51,11 @@ namespace BACKEND_STORE.Models
 
         public class LoginResponse
         {
+            public string idUser { get; set; }
             public string user { get; set; }
+            public string roleid { get; set; }
+            public string token { get; set; }
+            public bool success { get; set; }
         }
     }
 }
