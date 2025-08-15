@@ -95,3 +95,4 @@
 2025-08-14 21:52:35 - Error in GetUserById: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
 2025-08-14 21:52:40 - Iniciando GetUserById con ID: 0
 2025-08-14 21:52:40 - Error in GetUserById: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+2025-08-14 22:04:01 - Role with ID 2147483647 not found.

@@ -21,12 +21,7 @@ namespace BACKEND_STORE.Repositories
             _logs = logs;
             _jwtService = jwtService;
          }
-
-        public async Task<LoginResponse> Register(registerPOST dataUser)
-        {
-            return null;
-        }
-
+     
         public async Task<LoginResponse> Login(login dataUser)
         {
             try

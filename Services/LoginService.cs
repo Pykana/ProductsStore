@@ -12,12 +12,6 @@ namespace BACKEND_STORE.Services
             _loginRepository = loginRepository;
         }
 
-
-        public async Task<LoginResponse> Register(registerPOST dataUser)
-        {
-            return await _loginRepository.Register(dataUser);
-        }
-
         public async Task<LoginResponse> Login(login dataUser)
         {
             return await _loginRepository.Login(dataUser);
