@@ -22,32 +22,32 @@ Env.Load();
 void SetConfig(string key, string? value) => builder.Configuration[key] = value ?? "";
 
 // Base de datos
-SetConfig("STORE_DATABASE_IP", Environment.GetEnvironmentVariable("STORE_DATABASE_IP"));
-SetConfig("STORE_DATABASE_PORT", Environment.GetEnvironmentVariable("STORE_DATABASE_PORT"));
-SetConfig("STORE_DATABASE_NAMEDB_STORE", Environment.GetEnvironmentVariable("STORE_DATABASE_NAMEDB_STORE"));
-SetConfig("STORE_DATABASE_USER", Environment.GetEnvironmentVariable("STORE_DATABASE_USER"));
-SetConfig("STORE_DATABASE_PASS", Environment.GetEnvironmentVariable("STORE_DATABASE_PASS"));
-SetConfig("STORE_DATABASE_TRUST_CERT", Environment.GetEnvironmentVariable("STORE_DATABASE_TRUST_CERT"));
+SetConfig("Secrets:STORE_DATABASE_IP", Environment.GetEnvironmentVariable("STORE_DATABASE_IP"));
+SetConfig("Secrets:STORE_DATABASE_PORT", Environment.GetEnvironmentVariable("STORE_DATABASE_PORT"));
+SetConfig("Secrets:STORE_DATABASE_NAMEDB_STORE", Environment.GetEnvironmentVariable("STORE_DATABASE_NAMEDB_STORE"));
+SetConfig("Secrets:STORE_DATABASE_USER", Environment.GetEnvironmentVariable("STORE_DATABASE_USER"));
+SetConfig("Secrets:STORE_DATABASE_PASS", Environment.GetEnvironmentVariable("STORE_DATABASE_PASS"));
+SetConfig("Secrets:STORE_DATABASE_TRUST_CERT", Environment.GetEnvironmentVariable("STORE_DATABASE_TRUST_CERT"));
 
 // Email
-SetConfig("STORE_KEY_EMAIL_HOST", Environment.GetEnvironmentVariable("STORE_KEY_EMAIL_HOST"));
-SetConfig("STORE_KEY_EMAIL_BASE", Environment.GetEnvironmentVariable("STORE_KEY_EMAIL_BASE"));
-SetConfig("STORE_KEY_EMAIL_PORT", Environment.GetEnvironmentVariable("STORE_KEY_EMAIL_PORT"));
-SetConfig("STORE_KEY_EMAIL_USER", Environment.GetEnvironmentVariable("STORE_KEY_EMAIL_USER"));
-SetConfig("STORE_KEY_EMAIL_PASSW", Environment.GetEnvironmentVariable("STORE_KEY_EMAIL_PASSW"));
-SetConfig("STORE_KEY_EMAIL_SSL", Environment.GetEnvironmentVariable("STORE_KEY_EMAIL_SSL"));
+SetConfig("Secrets:STORE_KEY_EMAIL_HOST", Environment.GetEnvironmentVariable("STORE_KEY_EMAIL_HOST"));
+SetConfig("Secrets:STORE_KEY_EMAIL_BASE", Environment.GetEnvironmentVariable("STORE_KEY_EMAIL_BASE"));
+SetConfig("Secrets:STORE_KEY_EMAIL_PORT", Environment.GetEnvironmentVariable("STORE_KEY_EMAIL_PORT"));
+SetConfig("Secrets:STORE_KEY_EMAIL_USER", Environment.GetEnvironmentVariable("STORE_KEY_EMAIL_USER"));
+SetConfig("Secrets:STORE_KEY_EMAIL_PASSW", Environment.GetEnvironmentVariable("STORE_KEY_EMAIL_PASSW"));
+SetConfig("Secrets:STORE_KEY_EMAIL_SSL", Environment.GetEnvironmentVariable("STORE_KEY_EMAIL_SSL"));
 
 // Paths
-SetConfig("STORE_PATH_LOGS", Environment.GetEnvironmentVariable("STORE_PATH_LOGS"));
-SetConfig("STORE_PATH_EMAIL_TEMPLATE", Environment.GetEnvironmentVariable("STORE_PATH_EMAIL_TEMPLATE"));
+SetConfig("Secrets:STORE_PATH_LOGS", Environment.GetEnvironmentVariable("STORE_PATH_LOGS"));
+SetConfig("Secrets:STORE_PATH_EMAIL_TEMPLATE", Environment.GetEnvironmentVariable("STORE_PATH_EMAIL_TEMPLATE"));
 
 // Config
-SetConfig("STORE_CONFIG_TIMEZONE", Environment.GetEnvironmentVariable("STORE_CONFIG_TIMEZONE"));
-SetConfig("STORE_CONFIG_SAVEDB", Environment.GetEnvironmentVariable("STORE_CONFIG_SAVEDB"));
+SetConfig("Secrets:STORE_CONFIG_TIMEZONE", Environment.GetEnvironmentVariable("STORE_CONFIG_TIMEZONE"));
+SetConfig("Secrets:STORE_CONFIG_SAVEDB", Environment.GetEnvironmentVariable("STORE_CONFIG_SAVEDB"));
 
 // URLs externas
-SetConfig("STORE_EXTERNAL_URL", Environment.GetEnvironmentVariable("STORE_EXTERNAL_URL"));
-SetConfig("STORE_EXTERNAL_URL2", Environment.GetEnvironmentVariable("STORE_EXTERNAL_URL2"));
+SetConfig("Secrets:STORE_EXTERNAL_URL", Environment.GetEnvironmentVariable("STORE_EXTERNAL_URL"));
+SetConfig("Secrets:STORE_EXTERNAL_URL2", Environment.GetEnvironmentVariable("STORE_EXTERNAL_URL2"));
 
 //JWT
 

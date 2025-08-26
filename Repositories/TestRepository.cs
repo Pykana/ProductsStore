@@ -1,6 +1,5 @@
 ﻿using BACKEND_STORE.Interfaces.IRepository;
 using BACKEND_STORE.Models.DB;
-using BACKEND_STORE.Config;
 using BACKEND_STORE.Shared;
 using BACKEND_STORE.Models;
 

@@ -1,6 +1,4 @@
-﻿using BACKEND_STORE.Config;
-using BACKEND_STORE.Models.DB;
-using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Runtime;
 using System.Security.Claims;

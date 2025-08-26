@@ -1,4 +1,4 @@
-﻿using static BACKEND_STORE.Config.Logs;
+﻿using static BACKEND_STORE.Shared.Logs;
 
 namespace BACKEND_STORE.Config
 {

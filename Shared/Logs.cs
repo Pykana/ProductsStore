@@ -2,7 +2,7 @@
 using System.IO;
 using Microsoft.Extensions.Configuration;
 
-namespace BACKEND_STORE.Config
+namespace BACKEND_STORE.Shared
 {
     public class Logs
     {
@@ -11,8 +11,8 @@ namespace BACKEND_STORE.Config
 
         public Logs(IConfiguration configuration)
         {
-            _logsPath = configuration["STORE_PATH_LOGS"] ?? AppContext.BaseDirectory + "Logs";
-            _flagSaveDB = bool.TryParse(configuration["STORE_CONFIG_SAVEDB"], out var flag) && flag;
+            _logsPath = configuration["Secrets:STORE_PATH_LOGS"] ?? AppContext.BaseDirectory + "Logs";
+            _flagSaveDB = bool.TryParse(configuration["Secrets:STORE_CONFIG_SAVEDB"], out var flag) && flag;
         }
 
         public bool SaveLog(string message)

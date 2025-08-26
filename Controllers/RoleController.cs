@@ -17,7 +17,7 @@ namespace BACKEND_STORE.Controllers
             _roleService = roleService;
         }
 
-        [Authorize(Roles = "1,2")]
+        //[Authorize(Roles = "1,2")]
         [HttpGet("GetRoles")]
         [ProducesResponseType(typeof(IEnumerable<RolePost>), 200)]
         public async Task<IActionResult> GetRoles()
@@ -45,7 +45,7 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
-        [Authorize(Roles = "1,2")]
+        //[Authorize(Roles = "1,2")]
         [HttpGet("GetRoleByID")]
         [ProducesResponseType(typeof(RolePost), 200)]
         public async Task<IActionResult> GetRolesById([Required(ErrorMessage ="El ID es obligatorio")] int id)

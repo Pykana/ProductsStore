@@ -65,7 +65,7 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
-        [Authorize(Roles = "1,2")]
+        //[Authorize(Roles = "1,2")]
         [HttpPost("CreateUser")]
         [ProducesResponseType(typeof(GenericResponseDTO), 200)] 
         public async Task<IActionResult> CreateUser([FromBody] UserRequestPost data)
