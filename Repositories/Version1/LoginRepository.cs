@@ -1,24 +1,22 @@
-﻿using BACKEND_STORE.Interfaces.IRepository;
+﻿using BACKEND_STORE.Interfaces.IRepository.Version1;
 using BACKEND_STORE.Models.DB;
 using BACKEND_STORE.Shared;
 using static BACKEND_STORE.Models.Login;
 
-namespace BACKEND_STORE.Repositories
+namespace BACKEND_STORE.Repositories.Version1
 {
     public class LoginRepository : ILoginRepository
     {
         private readonly AppDbContext _context;  // DbContext for database operations
         private readonly Encryption _encryption; // Encryption service for password hashings
         private readonly Logs _logs; // Logging service for logging messages
-        private readonly Token _jwtService; // JWT service for generating tokens
 
 
-        public LoginRepository(AppDbContext context, Encryption encryption, Logs logs, Token jwtService)
+        public LoginRepository(AppDbContext context, Encryption encryption, Logs logs)
         {
             _context = context;
             _encryption = encryption;
             _logs = logs;
-            _jwtService = jwtService;
          }
      
         public async Task<LoginResponse> Login(login dataUser)
@@ -56,14 +54,14 @@ namespace BACKEND_STORE.Repositories
                 }
                 _logs.SaveLog($"User {dataUser.username} logged in successfully.");
 
-                var token = _jwtService.GenerateToken(user.Id_User.ToString(), user.username, user.RoleId.ToString());
+                //var token = _jwtService.GenerateToken(user.Id_User.ToString(), user.username, user.RoleId.ToString());
 
                 return new LoginResponse
                 {
                     idUser = user.Id_User.ToString(),
                     user = user.username,
                     roleid = user.RoleId.ToString(),
-                    token = token, 
+                    //token = token, 
                     success = true
                 };
 

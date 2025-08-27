@@ -1,15 +1,14 @@
-﻿using BACKEND_STORE.Interfaces.IService;
+﻿using BACKEND_STORE.Interfaces.IService.Version1;
 using BACKEND_STORE.Models;
-using BACKEND_STORE.Shared;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using static BACKEND_STORE.Models.Login;
 using static BACKEND_STORE.Models.User;
 
-namespace BACKEND_STORE.Controllers
+namespace BACKEND_STORE.Controllers.Version1
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class LoginController : ControllerBase
     {
         private ILoginService _LoginService;
@@ -61,7 +60,6 @@ namespace BACKEND_STORE.Controllers
             {
                 return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
-            }
-
+        }
     }
 }

@@ -1,9 +1,9 @@
-﻿using BACKEND_STORE.Interfaces.IRepository;
-using BACKEND_STORE.Interfaces.IService;
+﻿using BACKEND_STORE.Interfaces.IRepository.Version0;
+using BACKEND_STORE.Interfaces.IService.Version0;
 using BACKEND_STORE.Models;
-using BACKEND_STORE.Repositories;
+using static BACKEND_STORE.Config.EnvironmentVariableConfig;
 
-namespace BACKEND_STORE.Services
+namespace BACKEND_STORE.Services.Version0
 {
     public class TestService : ITestService
     {
@@ -19,7 +19,7 @@ namespace BACKEND_STORE.Services
             return await _testRepository.ProbarConexion();
         }
 
-        public async Task<StoreConfig> VerVaribalesDeEntorno()
+        public async Task<VariablesEntorno> VerVaribalesDeEntorno()
         {
             return await _testRepository.VerVaribalesDeEntorno();
         }

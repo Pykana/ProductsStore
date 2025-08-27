@@ -1,4 +1,9 @@
 ﻿#--------------------------------------------
+# Instalar Dotnet como global
+#--------------------------------------------
+dotnet tool install --global dotnet-ef
+
+#--------------------------------------------
 # Comando para Administrador de paquetes NuGet
 #--------------------------------------------
 
@@ -10,6 +15,7 @@ dotnet ef migrations remove
 
 # Crear una nueva migración - InitialCreate es el nombre de la migración
 dotnet ef migrations add InitialCreate
+dotnet ef migrations add CipsaLaptop26082025
 
 # Actualizar la base de datos con la migración creada
 dotnet ef database update

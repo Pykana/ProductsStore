@@ -2,7 +2,7 @@
 using BACKEND_STORE.Models.ENTITIES;
 using static BACKEND_STORE.Models.Role;
 
-namespace BACKEND_STORE.Interfaces.IService
+namespace BACKEND_STORE.Interfaces.IService.Version1
 {
     public interface IRoleService
     {

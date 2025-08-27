@@ -12,8 +12,6 @@ namespace BACKEND_STORE.Shared
             var topt = new Totp(secretbytes);
 
             string CodigoEsperado = topt.ComputeTotp();
-
-
             return CodigoEsperado == CodigoUsuario;
         }
 

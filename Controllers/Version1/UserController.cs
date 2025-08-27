@@ -1,15 +1,15 @@
-﻿using BACKEND_STORE.Interfaces.IService;
+﻿using BACKEND_STORE.Interfaces.IService.Version1;
 using BACKEND_STORE.Models;
 using BACKEND_STORE.Models.ENTITIES;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using static BACKEND_STORE.Models.User;
 
-namespace BACKEND_STORE.Controllers
+namespace BACKEND_STORE.Controllers.Version1
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class UserController : ControllerBase
     {
         private IUserService _userService;
@@ -18,7 +18,6 @@ namespace BACKEND_STORE.Controllers
             _userService = userService;
         }
 
-        [Authorize(Roles = "1,2")]
         [HttpGet("GetUsers")]
         [ProducesResponseType(typeof(IEnumerable<Users>), 200)]
         public ActionResult GetAllUsers() {
@@ -41,7 +40,6 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
-        [Authorize(Roles = "1,2")]
         [HttpGet("UserById")]
         [ProducesResponseType(typeof(userDTO), 200)]
         public async Task<IActionResult> GetUserById([Required(ErrorMessage ="Debe ingresar un ID")]int id)
@@ -65,7 +63,6 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
-        //[Authorize(Roles = "1,2")]
         [HttpPost("CreateUser")]
         [ProducesResponseType(typeof(GenericResponseDTO), 200)] 
         public async Task<IActionResult> CreateUser([FromBody] UserRequestPost data)
@@ -89,7 +86,6 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
-        [Authorize(Roles = "1,2")]
         [HttpPut("UpdateUser")]
         [ProducesResponseType(typeof(GenericResponseDTO), 200)]
         public async Task<IActionResult> UpdateUser([FromBody] UserRequestPut data)
@@ -113,7 +109,6 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
-        [Authorize(Roles = "1")]
         [HttpDelete("DeleteUser")]
         [ProducesResponseType(typeof(GenericResponseDTO), 200)]
         public async Task<IActionResult> DeleteUser(int id, string pass, string Actual_User)
@@ -136,7 +131,5 @@ namespace BACKEND_STORE.Controllers
                 return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
         }
-
-
     }
 }

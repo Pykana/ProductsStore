@@ -1,15 +1,14 @@
-﻿using BACKEND_STORE.Interfaces.IService;
+﻿using BACKEND_STORE.Interfaces.IService.Version1;
 using BACKEND_STORE.Models;
-using BACKEND_STORE.Models.ENTITIES;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using static BACKEND_STORE.Models.Role;
 
-namespace BACKEND_STORE.Controllers
+namespace BACKEND_STORE.Controllers.Version1
 {
-    [Controller]
-    [Route("api/[controller]")]
+    [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class RoleController : ControllerBase
     {
         private readonly IRoleService _roleService;
@@ -17,7 +16,6 @@ namespace BACKEND_STORE.Controllers
             _roleService = roleService;
         }
 
-        //[Authorize(Roles = "1,2")]
         [HttpGet("GetRoles")]
         [ProducesResponseType(typeof(IEnumerable<RolePost>), 200)]
         public async Task<IActionResult> GetRoles()
@@ -45,7 +43,6 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
-        //[Authorize(Roles = "1,2")]
         [HttpGet("GetRoleByID")]
         [ProducesResponseType(typeof(RolePost), 200)]
         public async Task<IActionResult> GetRolesById([Required(ErrorMessage ="El ID es obligatorio")] int id)
@@ -73,15 +70,13 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
-
-        [Authorize(Roles = "1,2")]
         [HttpPost("CreateRole")]
-        [ProducesResponseType(typeof(Role.RolePost), 200)]
+        [ProducesResponseType(typeof(RolePost), 200)]
         public async Task<IActionResult> CreateRole([FromBody] RoleRequestPost data)
         {
             try
             {
-                Role.RolePost result = await _roleService.CreateRole(data);
+                RolePost result = await _roleService.CreateRole(data);
                 if (result == null)
                 {
                     return BadRequest("Error al crear el rol. Verifique los datos proporcionados.");
@@ -101,7 +96,7 @@ namespace BACKEND_STORE.Controllers
                 return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
         }
-        [Authorize(Roles = "1,2")]
+
         [HttpPut("UpdateRole")]
         [ProducesResponseType(typeof(GenericResponseDTO), 200)]
         public async Task<IActionResult> UpdateRole([FromBody] RoleRequestPut data)
@@ -129,7 +124,6 @@ namespace BACKEND_STORE.Controllers
             }
         }
 
-        [Authorize(Roles = "1")]
         [HttpDelete("DeleteRole")]
         [ProducesResponseType(typeof(GenericResponseDTO), 200)]
         public async Task<IActionResult> DeleteRole([FromQuery] int id , string user)
@@ -156,6 +150,5 @@ namespace BACKEND_STORE.Controllers
                 return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
         }
-
     }
 }

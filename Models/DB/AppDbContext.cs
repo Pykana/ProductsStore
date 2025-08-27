@@ -1,6 +1,5 @@
 ﻿using BACKEND_STORE.Models.ENTITIES;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
 
 namespace BACKEND_STORE.Models.DB
 {

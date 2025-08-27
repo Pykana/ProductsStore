@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO;
-using Microsoft.Extensions.Configuration;
-
-namespace BACKEND_STORE.Shared
+﻿namespace BACKEND_STORE.Shared
 {
     public class Logs
     {

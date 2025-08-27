@@ -1,4 +1,4 @@
-﻿using BACKEND_STORE.Interfaces.IRepository;
+﻿using BACKEND_STORE.Interfaces.IRepository.Version1;
 using BACKEND_STORE.Models;
 using BACKEND_STORE.Models.DB;
 using BACKEND_STORE.Models.ENTITIES;
@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 using static BACKEND_STORE.Models.Role;
 
-namespace BACKEND_STORE.Repositories
+namespace BACKEND_STORE.Repositories.Version1
 {
     public class RoleRepository : IRoleRepository
     {

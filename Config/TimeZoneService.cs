@@ -1,13 +1,14 @@
-﻿using static BACKEND_STORE.Shared.Logs;
+﻿using static BACKEND_STORE.Config.EnvironmentVariableConfig;
 
 namespace BACKEND_STORE.Config
 {
     public class TimeZoneService
     {
         private readonly string _timeZone;
-        public TimeZoneService(IConfiguration configuration)
+
+        public TimeZoneService()
         {
-            _timeZone = configuration["STORE_CONFIG_TIMEZONE"] ?? GetTimeZone();
+            _timeZone = Variables.STORE_CONFIG_TIMEZONE;
         }
         public static string GetTimeZone()
         {

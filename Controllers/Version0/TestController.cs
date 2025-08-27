@@ -1,41 +1,39 @@
-﻿using BACKEND_STORE.Interfaces.IService;
+﻿using BACKEND_STORE.Interfaces.IService.Version0;
 using BACKEND_STORE.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
-using System.Security.Claims;
+using static BACKEND_STORE.Config.EnvironmentVariableConfig;
 
-namespace BACKEND_STORE.Controllers
+
+
+namespace BACKEND_STORE.Controllers.Version0
 {
-    [Authorize(Roles = "1")]
-    [Route("api/[controller]")]
     [ApiController]
+    [ApiVersion("0.1")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class TestController : ControllerBase
     {
         private ITestService _TestService;
-        public TestController( ITestService TestService)
+
+        public TestController(ITestService TestService)
         {
             _TestService = TestService;
         }
-        
+
+
         [HttpGet("ProbarConexion")]
         [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any, NoStore = false)]
         [ProducesResponseType(typeof(Test), 200)]
         public async Task<IActionResult> ProbarConexion()
         {
-            try {
-
-                var roleId = User.FindFirstValue(ClaimTypes.Role);
-
-                if (roleId != "1")
-                {
-                    return Forbid(); 
-                }
-
+            try
+            {
+                CheckAccess();
 
                 Test resultado = await _TestService.ProbarConexion();
 
-                switch (resultado.Value) {
+                switch (resultado.Value)
+                {
                     case 0:
                         return BadRequest(resultado);
                     case 1:
@@ -51,18 +49,14 @@ namespace BACKEND_STORE.Controllers
         }
 
         [HttpGet("VerVaribalesDeEntorno")]
-        [ProducesResponseType(typeof(StoreConfig), 200)]
-        public async Task<IActionResult> VerVaribalesDeEntorno( )
+        [ProducesResponseType(typeof(VariablesEntorno), 200)]
+        public async Task<IActionResult> VerVaribalesDeEntorno()
         {
             try
             {
-                var roleId = User.FindFirstValue(ClaimTypes.Role);
+                CheckAccess();
 
-                if (roleId != "1")
-                {
-                    return Forbid();
-                }
-                StoreConfig resultado = await _TestService.VerVaribalesDeEntorno();
+                VariablesEntorno resultado = await _TestService.VerVaribalesDeEntorno();
                 return Ok(resultado);
             }
             catch (Exception ex)
@@ -79,15 +73,11 @@ namespace BACKEND_STORE.Controllers
         {
             try
             {
-                var roleId = User.FindFirstValue(ClaimTypes.Role);
-
-                if (roleId != "1")
-                {
-                    return Forbid();
-                }
+                CheckAccess();
 
                 if (string.IsNullOrEmpty(contraseña))
                     return BadRequest("La contraseña no puede estar vacía.");
+
                 string resultado = await _TestService.VerificarEncriptamiento(contraseña);
                 return Ok(resultado);
             }
@@ -106,13 +96,7 @@ namespace BACKEND_STORE.Controllers
         {
             try
             {
-                var roleId = User.FindFirstValue(ClaimTypes.Role);
-
-                if (roleId != "1")
-                {
-                    return Forbid();
-                }
-
+                CheckAccess();
                 if (string.IsNullOrEmpty(Mensaje))
                     return BadRequest("El mensaje no puede estar vacío.");
                 string resultado = await _TestService.VerificarLogs(Mensaje);
@@ -123,6 +107,22 @@ namespace BACKEND_STORE.Controllers
                 return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
         }
+
+
+        private IActionResult CheckAccess()
+        {
+            try
+            {
+                if (!Variables.CONFIG_DEBUG)
+                    return Unauthorized("Este endpoint está deshabilitado por configuración.");
+                return null!;
+            }
+            catch (Exception)
+            {
+                return Conflict("Configuracion erronea");
+            }
+        }
+
 
     }
 }

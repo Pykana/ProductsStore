@@ -1,13 +1,12 @@
-﻿using BACKEND_STORE.Interfaces.IRepository;
+﻿using BACKEND_STORE.Interfaces.IRepository.Version1;
 using BACKEND_STORE.Models;
 using BACKEND_STORE.Models.DB;
 using BACKEND_STORE.Models.ENTITIES;
 using BACKEND_STORE.Shared;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using static BACKEND_STORE.Models.User;
 
-namespace BACKEND_STORE.Repositories
+namespace BACKEND_STORE.Repositories.Version1
 {
     public class UserRepository : IUserRepository
     {

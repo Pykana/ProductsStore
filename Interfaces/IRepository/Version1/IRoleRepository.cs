@@ -1,9 +1,7 @@
 ﻿using BACKEND_STORE.Models;
-using BACKEND_STORE.Models.ENTITIES;
-using Microsoft.AspNetCore.Mvc;
 using static BACKEND_STORE.Models.Role;
 
-namespace BACKEND_STORE.Interfaces.IRepository
+namespace BACKEND_STORE.Interfaces.IRepository.Version1
 {
     public interface IRoleRepository
     {

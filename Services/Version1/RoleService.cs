@@ -1,10 +1,10 @@
-﻿using BACKEND_STORE.Interfaces.IRepository;
-using BACKEND_STORE.Interfaces.IService;
+﻿using BACKEND_STORE.Interfaces.IRepository.Version1;
+using BACKEND_STORE.Interfaces.IService.Version1;
 using BACKEND_STORE.Models;
 using BACKEND_STORE.Models.ENTITIES;
 using static BACKEND_STORE.Models.Role;
 
-namespace BACKEND_STORE.Services
+namespace BACKEND_STORE.Services.Version1
 {
     public class RoleService : IRoleService
     {
