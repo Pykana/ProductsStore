@@ -39,13 +39,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Version2\" />
-    <Folder Include="Interfaces\IRepository\Version2\" />
-    <Folder Include="Interfaces\IService\Version2\" />
     <Folder Include="Logs\" />
     <Folder Include="Migrations\" />
-    <Folder Include="Repositories\Version2\" />
-    <Folder Include="Services\Version2\" />
+    <Folder Include="Modules\Tests\Controllers\V1\" />
   </ItemGroup>
 
 </Project>
