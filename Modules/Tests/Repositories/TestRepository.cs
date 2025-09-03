@@ -1,4 +1,5 @@
-﻿using BACKEND_STORE.Modules.Tests.Interfaces;
+﻿using BACKEND_STORE.Config;
+using BACKEND_STORE.Modules.Tests.Interfaces;
 using BACKEND_STORE.Modules.Tests.Models;
 using BACKEND_STORE.Shared;
 using BACKEND_STORE.Shared.DB;

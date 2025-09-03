@@ -1,4 +1,4 @@
-﻿namespace BACKEND_STORE.Shared
+﻿namespace BACKEND_STORE.Config
 {
     public class Logs
     {

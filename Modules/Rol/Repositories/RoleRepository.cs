@@ -5,6 +5,7 @@ using BACKEND_STORE.Shared.DB;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 using static BACKEND_STORE.Modules.Rol.Models.Role;
+using BACKEND_STORE.Config;
 
 namespace BACKEND_STORE.Modules.Rol.Repositories
 {
