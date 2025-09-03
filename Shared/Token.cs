@@ -2,42 +2,40 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using static BACKEND_STORE.Config.JWT;
+using static BACKEND_STORE.Config.EnvironmentVariableConfig;
 
 namespace BACKEND_STORE.Shared
 {
-    public class Token
+    public static class JWT
     {
-        private readonly JWTSettings _settings;
-        public Token(JWTSettings settings)
+        public static string GenerateJwtToken(JWT_TokenRequest data)
         {
-            _settings = settings;
-        }
-
-        public string GenerateToken(string userId, string username, string roleId)
-        {
-            var claims = new[]
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, userId),
-                new Claim(JwtRegisteredClaimNames.UniqueName, username),
-                new Claim(ClaimTypes.Role, roleId), 
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            };
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_settings.SecretKey));
+            var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.NameIdentifier, data.UserId.ToString()),
+                    new Claim(ClaimTypes.Name, data.UserName),
+                    new Claim(ClaimTypes.Role, data.Role.ToString()),
+                    new Claim(ClaimTypes.Uri, data.URI)
+                };
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Variables.STORE_JWT_SECRET_KEY));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
             var token = new JwtSecurityToken(
-                issuer: _settings.Issuer,
-                audience: _settings.Audience,
+                issuer: Variables.STORE_JWT_ISSUER,
+                audience: Variables.STORE_JWT_AUDIENCE,
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(_settings.ExpirationMinutes),
+                expires: DateTime.Now.AddDays(Variables.STORE_JWT_EXPIRATION_MINUTES), // Token expiration
                 signingCredentials: creds
             );
-
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
-
     }
+
+    public class JWT_TokenRequest
+    {
+        public int UserId { get; set; }
+        public string UserName { get; set; }
+        public int Role { get; set; }
+        public string URI { get; set; }
+    }
+
 }

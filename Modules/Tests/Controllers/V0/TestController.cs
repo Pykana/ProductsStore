@@ -1,9 +1,10 @@
-﻿using BACKEND_STORE.Shared;
-using BACKEND_STORE.Modules.Tests.Interfaces;
+﻿using BACKEND_STORE.Modules.Tests.Interfaces;
+using BACKEND_STORE.Modules.Tests.Models;
+using BACKEND_STORE.Modules.User.Models;
+using BACKEND_STORE.Shared;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using static BACKEND_STORE.Config.EnvironmentVariableConfig;
-using BACKEND_STORE.Modules.Tests.Models;
 
 namespace BACKEND_STORE.Modules.Tests.Controllers.V0
 {
@@ -27,8 +28,6 @@ namespace BACKEND_STORE.Modules.Tests.Controllers.V0
         {
             try
             {
-                 CheckAccess();
-
                 Test resultado = await _TestService.ProbarConexion();
 
                 switch (resultado.Value)
@@ -53,8 +52,6 @@ namespace BACKEND_STORE.Modules.Tests.Controllers.V0
         {
             try
             {
-                CheckAccess();
-
                 VariablesEntorno resultado = await _TestService.VerVaribalesDeEntorno();
                 return Ok(resultado);
             }
@@ -72,8 +69,6 @@ namespace BACKEND_STORE.Modules.Tests.Controllers.V0
         {
             try
             {
-                CheckAccess();
-
                 if (string.IsNullOrEmpty(contraseña))
                     return BadRequest("La contraseña no puede estar vacía.");
 
@@ -95,7 +90,6 @@ namespace BACKEND_STORE.Modules.Tests.Controllers.V0
         {
             try
             {
-                CheckAccess();
                 if (string.IsNullOrEmpty(Mensaje))
                     return BadRequest("El mensaje no puede estar vacío.");
                 string resultado = await _TestService.VerificarLogs(Mensaje);
@@ -108,20 +102,34 @@ namespace BACKEND_STORE.Modules.Tests.Controllers.V0
         }
 
 
-        private IActionResult CheckAccess()
+        [HttpPost("CreateToken")]
+        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any, NoStore = false)]
+        [ProducesResponseType(typeof(string), 200)]
+        public async Task<IActionResult> CreateToken()
         {
             try
             {
-                if (!Variables.CONFIG_DEBUG)
-                    return BadRequest("Este endpoint está deshabilitado por configuración.");
-                return null!;
+                try
+                {
+                    JWT_TokenRequest data = new JWT_TokenRequest
+                    {
+                        UserName = "Root",
+                        UserId = 0,
+                        Role = 0,
+                        URI = string.Empty
+                    };
+                    var token = JWT.GenerateJwtToken(data);
+                    return Ok(token);
+                }
+                catch (Exception ex)
+                {
+                    return Unauthorized();
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return Conflict("Configuracion erronea");
+                return Unauthorized($"Error interno del servidor: {ex.Message}");
             }
         }
-
-
     }
 }

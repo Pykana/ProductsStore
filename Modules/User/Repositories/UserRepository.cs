@@ -54,8 +54,6 @@ namespace BACKEND_STORE.Modules.User.Repositories
             {
                 _logs.SaveLog($"Iniciando GetUserById con ID: {id}");
 
-
-
                 var user = _context.Users.Where(u => u.Id_User == id && u.is_active).FirstOrDefault();
                 var role = _context.Roles.Where(r => r.Id_Role == user.RoleId).FirstOrDefault();
 

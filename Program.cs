@@ -1,5 +1,4 @@
-﻿using BACKEND_STORE.Config;
-using BACKEND_STORE.Modules.Login.Interfaces;
+﻿using BACKEND_STORE.Modules.Login.Interfaces;
 using BACKEND_STORE.Modules.Login.Repositories;
 using BACKEND_STORE.Modules.Login.Services;
 using BACKEND_STORE.Modules.Rol.Interfaces;
@@ -13,8 +12,11 @@ using BACKEND_STORE.Modules.User.Repositories;
 using BACKEND_STORE.Modules.User.Services;
 using BACKEND_STORE.Shared;
 using BACKEND_STORE.Shared.DB;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using static BACKEND_STORE.Config.EnvironmentVariableConfig;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -125,6 +127,25 @@ builder.Services.AddAuthorization();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(Variables.STORE_DATABASE_CONNECTION));
 
+
+//JWT
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = Variables.STORE_JWT_ISSUER,
+            ValidAudience = Variables.STORE_JWT_AUDIENCE,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Variables.STORE_JWT_SECRET_KEY))
+        };
+    });
+
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
 #endregion
 
@@ -156,7 +177,7 @@ if (Variables.STORE_CONFIG_SWAGGER) {
         });
 }
 
-//app.UseAuthentication();
+app.UseAuthentication();
 app.UseAuthorization();
 app.UseHttpsRedirection();
 app.UseCors("StoreCorsPolicy");

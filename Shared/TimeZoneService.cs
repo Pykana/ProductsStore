@@ -1,6 +1,6 @@
 ﻿using static BACKEND_STORE.Config.EnvironmentVariableConfig;
 
-namespace BACKEND_STORE.Config
+namespace BACKEND_STORE.Shared
 {
     public class TimeZoneService
     {
