@@ -1,0 +1,371 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "A:\\Github\\SOLUCIONES\\DB_Store\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\shared\\db\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:shared\\db\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\modules\\tests\\repositories\\testrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:modules\\tests\\repositories\\testrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\comandos.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:comandos.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\.gitattributes||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:.gitattributes||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\config\\timezoneservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:config\\timezoneservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\logs\\log_20250814.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:logs\\log_20250814.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\eduar\\AppData\\Local\\SourceServer\\289129e62e7805937c77037df4b25f8a70fdda9bf51dd9b3827e1b473ac69bbc\\Controllers\\LoginController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\.env.example||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:.env.example||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\logs\\log_20250813.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:logs\\log_20250813.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\logs\\log_20250812.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:logs\\log_20250812.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\libman.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:libman.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|a:\\github\\soluciones\\db_store\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{00EDF71C-5AD2-45D8-9F7F-951F3AD17CCA}|BACKEND_STORE.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\QrCodeBitmapExtensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\QrCodeBitmapExtensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\TwoAuth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\TwoAuth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\Email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\Token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|A:\\Github\\SOLUCIONES\\DB_Store\\Config\\JWT.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Config\\JWT.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\Logs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Logs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\Encryption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Encryption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\DB\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Shared\\DB\\AppDbContext.cs",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\DB\\AppDbContext.cs",
+              "RelativeToolTip": "Shared\\DB\\AppDbContext.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAUwJ8AAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T23:46:53.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TestRepository.cs",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Modules\\Tests\\Repositories\\TestRepository.cs",
+              "RelativeDocumentMoniker": "Modules\\Tests\\Repositories\\TestRepository.cs",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Modules\\Tests\\Repositories\\TestRepository.cs",
+              "RelativeToolTip": "Modules\\Tests\\Repositories\\TestRepository.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T23:38:54.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAwwJsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-26T14:09:19.844Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "QrCodeBitmapExtensions.cs",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\QrCodeBitmapExtensions.cs",
+              "RelativeDocumentMoniker": "Shared\\QrCodeBitmapExtensions.cs",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\QrCodeBitmapExtensions.cs",
+              "RelativeToolTip": "Shared\\QrCodeBitmapExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-26T14:08:55.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TwoAuth.cs",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\TwoAuth.cs",
+              "RelativeDocumentMoniker": "Shared\\TwoAuth.cs",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\TwoAuth.cs",
+              "RelativeToolTip": "Shared\\TwoAuth.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-26T14:02:18.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Email.cs",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\Email.cs",
+              "RelativeDocumentMoniker": "Shared\\Email.cs",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\Email.cs",
+              "RelativeToolTip": "Shared\\Email.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-26T13:56:42.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\AppData\\Local\\SourceServer\\289129e62e7805937c77037df4b25f8a70fdda9bf51dd9b3827e1b473ac69bbc\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\eduar\\AppData\\Local\\SourceServer\\289129e62e7805937c77037df4b25f8a70fdda9bf51dd9b3827e1b473ac69bbc\\Controllers\\LoginController.cs [Solo lectura]",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwCMAAAAAAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T22:01:00.708Z",
+              "EditorCaption": " [Solo lectura]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Token.cs",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\Token.cs",
+              "RelativeDocumentMoniker": "Shared\\Token.cs",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\Token.cs",
+              "RelativeToolTip": "Shared\\Token.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T20:43:36.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "log_20250814.txt",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Logs\\log_20250814.txt",
+              "RelativeDocumentMoniker": "Logs\\log_20250814.txt",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Logs\\log_20250814.txt",
+              "RelativeToolTip": "Logs\\log_20250814.txt",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAcwC0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-08-14T16:33:19.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "log_20250812.txt",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Logs\\log_20250812.txt",
+              "RelativeDocumentMoniker": "Logs\\log_20250812.txt",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Logs\\log_20250812.txt",
+              "RelativeToolTip": "Logs\\log_20250812.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-08-14T14:35:16.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "libman.json",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\libman.json",
+              "RelativeDocumentMoniker": "libman.json",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\libman.json",
+              "RelativeToolTip": "libman.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-13T22:22:24.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-13T22:22:22.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": ".gitignore",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-08-13T22:22:15.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": ".gitattributes",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\.gitattributes",
+              "RelativeDocumentMoniker": ".gitattributes",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\.gitattributes",
+              "RelativeToolTip": ".gitattributes",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-08-13T22:22:13.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": ".env.example",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\.env.example",
+              "RelativeDocumentMoniker": ".env.example",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\.env.example",
+              "RelativeToolTip": ".env.example",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-13T22:20:09.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "JWT.cs",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Config\\JWT.cs",
+              "RelativeDocumentMoniker": "Config\\JWT.cs",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Config\\JWT.cs",
+              "RelativeToolTip": "Config\\JWT.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T22:14:05.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "log_20250813.txt",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Logs\\log_20250813.txt",
+              "RelativeDocumentMoniker": "Logs\\log_20250813.txt",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Logs\\log_20250813.txt",
+              "RelativeToolTip": "Logs\\log_20250813.txt",
+              "ViewState": "AgIAACIAAAAAAAAAAABBwCAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-08-13T20:15:54.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Logs.cs",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\Logs.cs",
+              "RelativeDocumentMoniker": "Shared\\Logs.cs",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\Logs.cs",
+              "RelativeToolTip": "Shared\\Logs.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T20:14:19.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Comandos.txt",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Comandos.txt",
+              "RelativeDocumentMoniker": "Comandos.txt",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Comandos.txt",
+              "RelativeToolTip": "Comandos.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-08-13T19:31:40.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TimeZoneService.cs",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Config\\TimeZoneService.cs",
+              "RelativeDocumentMoniker": "Config\\TimeZoneService.cs",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Config\\TimeZoneService.cs",
+              "RelativeToolTip": "Config\\TimeZoneService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAkAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T17:41:58.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Encryption.cs",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\Encryption.cs",
+              "RelativeDocumentMoniker": "Shared\\Encryption.cs",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\Shared\\Encryption.cs",
+              "RelativeToolTip": "Shared\\Encryption.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T17:25:29.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": ".env",
+              "DocumentMoniker": "A:\\Github\\SOLUCIONES\\DB_Store\\.env",
+              "RelativeDocumentMoniker": ".env",
+              "ToolTip": "A:\\Github\\SOLUCIONES\\DB_Store\\.env",
+              "RelativeToolTip": ".env",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-12T16:24:07.14Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
