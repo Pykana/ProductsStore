@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e9b2e1c8-8775-4d3e-8946-2979be5d9f24" name="debian-server">
+        <fileTransfer rootFolder="/home/pykanaadmin/Publish/StoreAPI" accessType="SFTP" host="192.168.1.100" port="22" sshConfigId="7881154d-55ca-4b7e-98c0-562221014d7a" sshConfig="pykanaadmin@192.168.1.100:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

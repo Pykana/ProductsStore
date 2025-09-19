@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="192.168.1.100" id="7881154d-55ca-4b7e-98c0-562221014d7a" port="22" nameFormat="DESCRIPTIVE" username="pykanaadmin" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>
